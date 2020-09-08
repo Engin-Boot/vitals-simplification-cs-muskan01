@@ -7,8 +7,7 @@ using System.Diagnostics;
 
 namespace VitalAssignment
 {
-
-    public delegate void VitalAlert(string VitalName, string message);
+  public delegate void VitalAlert(string VitalName, string message);
     class Vital    
     {
         String vitalName;
