@@ -15,7 +15,6 @@ namespace VitalAssignment
     {
        public void SendAlert(string VitalName, string message)
         {
-           
             string s = String.Format("SMS sent: {0} {1}", VitalName, message);
             Console.WriteLine(s);
         }
