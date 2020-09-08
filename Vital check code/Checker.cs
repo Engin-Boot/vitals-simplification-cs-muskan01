@@ -14,17 +14,9 @@ namespace VitalAssignment
  
         public bool vitalsAreOk(int firstVital, int secondVital, int ThirdVital, VitalAlert typeOfAlert)
         {
-           bool a = bpm.isVitalOk(firstVital, typeOfAlert);
-           bool b = spo2.isVitalOk(secondVital, typeOfAlert);
-           bool c = respRate.isVitalOk(ThirdVital, typeOfAlert);
-            if (a==false || b==false || c==false)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return (bpm.isVitalOk(firstVital, typeOfAlert)
+                    && spo2.isVitalOk(secondVital, typeOfAlert)
+                    && respRate.isVitalOk(ThirdVital, typeOfAlert));
         }   
     }
 }
