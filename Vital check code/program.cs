@@ -30,7 +30,7 @@ namespace VitalAssignment
             Checker Vcheck = new Checker();
             //bool app = Vcheck.vitalsAreOk(40, 91, 92, alertbysound);
             ExpectTrue(Vcheck.vitalsAreOk(100, 95, 60,alertbysound));
-            ExpectFalse(vitalsAreOk(40, 91, 92,alertbysms));
+            ExpectFalse(Vcheck.vitalsAreOk(40, 91, 92,alertbysms));
             Console.WriteLine("All ok");
              return 0;
 
