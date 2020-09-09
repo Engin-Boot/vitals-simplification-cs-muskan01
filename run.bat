@@ -1,5 +1,8 @@
 pushd "%~dp0"
 
-checker.exe
+program.exe
+Alert.exe
+Checker.exe
+Vital.exe
 
 popd
