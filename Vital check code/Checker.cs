@@ -16,16 +16,15 @@ namespace VitalAssignment
          public bool vitalsAreOk(int[] VitalValues,
                                  VitalAlert typeOfAlert)
         {
-             bool a = true;
-             bool b = true;
+             bool[] a = new bool[2] {true, true};
              int i = 0;
              int j = 0;
             while (i < VitalList.Count && j < VitalValues.Length)
             {
-                a = VitalList[i].isVitalOk(VitalValues[j], typeOfAlert);
-                if (a == false)
+                a[0] = VitalList[i].isVitalOk(VitalValues[j], typeOfAlert);
+                if (a[0] == false)
                 {
-                    b = false;
+                    a[1] = false;
                     i++;
                     j++;
                 }
@@ -36,7 +35,7 @@ namespace VitalAssignment
                 }
             }
 
-            return b;
+            return a[1];
         }   
     }
 }
