@@ -29,9 +29,9 @@ namespace VitalAssignment
             VitalAlert alertbysms = new VitalAlert(sms.SendAlert);
             Checker Vcheck = new Checker();
             int[] values = new int[3]{100, 95, 60};
-            int[] values = new int[3]{40, 91, 92};
+            int[] values1 = new int[3]{40, 91, 92};
             ExpectTrue(Vcheck.vitalsAreOk(values,alertbysound));
-            ExpectFalse(Vcheck.vitalsAreOk(values,alertbysms));
+            ExpectFalse(Vcheck.vitalsAreOk(values1,alertbysms));
              return 0;
         }
     }
