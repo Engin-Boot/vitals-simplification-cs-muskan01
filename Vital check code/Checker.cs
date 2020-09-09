@@ -17,24 +17,14 @@ namespace VitalAssignment
                                  VitalAlert typeOfAlert)
         {
              bool[] a = new bool[2] {true, true};
-             int i = 0;
-             int j = 0;
-            while (i < VitalList.Count && j < VitalValues.Length)
+            for (int i=0; i < VitalList.Count; i++)
             {
-                a[0] = VitalList[i].isVitalOk(VitalValues[j], typeOfAlert);
+                a[0] = VitalList[i].isVitalOk(VitalValues[i], typeOfAlert);
                 if (a[0] == false)
                 {
                     a[1] = false;
-                    i++;
-                    j++;
-                }
-                else
-                {
-                    i++;
-                    j++;
                 }
             }
-
             return a[1];
         }   
     }
