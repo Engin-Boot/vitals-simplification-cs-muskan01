@@ -28,12 +28,11 @@ namespace VitalAssignment
             VitalAlert alertbysound = new VitalAlert(sound.SendAlert);
             VitalAlert alertbysms = new VitalAlert(sms.SendAlert);
             Checker Vcheck = new Checker();
-            //bool app = Vcheck.vitalsAreOk(40, 91, 92, alertbysound);
-            ExpectTrue(Vcheck.vitalsAreOk(100, 95, 60,alertbysound));
-            ExpectFalse(Vcheck.vitalsAreOk(40, 91, 92,alertbysms));
-            Console.WriteLine("All ok");
+            int[] values = new int[3]{100, 95, 60};
+            int[] values = new int[3]{40, 91, 92};
+            ExpectTrue(Vcheck.vitalsAreOk(values,alertbysound));
+            ExpectFalse(Vcheck.vitalsAreOk(values,alertbysms));
              return 0;
-
         }
     }
 }
