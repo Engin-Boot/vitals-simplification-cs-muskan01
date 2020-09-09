@@ -8,15 +8,35 @@ namespace VitalAssignment
 {
     class Checker
     { 
-        Vital bpm = new Vital("bpm",70,150);
-        Vital spo2 = new Vital("spo2", 90, 100);
-        Vital respRate = new Vital("respRate", 30, 95);
+        public List<Vital> VitalList = new List<Vital>()
+                                        {new Vital("bpm", 70, 150),
+                                         new Vital("spo2", 90, 100),
+                                         new Vital("respRate", 30, 95)};
  
-        public bool vitalsAreOk(int firstVital, int secondVital, int ThirdVital, VitalAlert typeOfAlert)
+         public bool vitalsAreOk(int[] VitalValues,
+                                 VitalAlert typeOfAlert)
         {
-            return (bpm.isVitalOk(firstVital, typeOfAlert)
-                    && spo2.isVitalOk(secondVital, typeOfAlert)
-                    && respRate.isVitalOk(ThirdVital, typeOfAlert));
+             bool a = true;
+             bool b = true;
+             int i = 0;
+             int j = 0;
+            while (i < VitalList.Count && j < VitalValues.Length)
+            {
+                a = VitalList[i].isVitalOk(VitalValues[j], typeOfAlert);
+                if (a == false)
+                {
+                    b = false;
+                    i++;
+                    j++;
+                }
+                else
+                {
+                    i++;
+                    j++;
+                }
+            }
+
+            return b;
         }   
     }
 }
