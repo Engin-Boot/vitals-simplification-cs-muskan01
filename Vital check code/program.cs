@@ -23,16 +23,20 @@ namespace VitalAssignment
     
         static int Main(string[] args)
         {
-            SMSAlert sms = new SMSAlert();
-            SoundAlert sound = new SoundAlert();
-            VitalAlert alertbysound = new VitalAlert(sound.SendAlert);
-            VitalAlert alertbysms = new VitalAlert(sms.SendAlert);
+            VitalAlert alertbysound = new VitalAlert(new SoundAlert().SendAlert);
+            VitalAlert alertbysms = new VitalAlert(new SMSAlert().SendAlert);
+            
             Checker Vcheck = new Checker();
             int[] values = new int[3]{100, 95, 60};
             int[] values1 = new int[3]{40, 91, 92};
             ExpectTrue(Vcheck.vitalsAreOk(values,alertbysound));
             ExpectFalse(Vcheck.vitalsAreOk(values1,alertbysms));
-             return 0;
+            
+            Checker Vcheck1 = new Checker();
+            Vcheck1.VitalList.Add(new Vital("sugar", 70, 99));
+            int[] values2 = new int[4] { 40, 91, 92, 100 };
+            ExpectFalse(Vcheck1.vitalsAreOk(values2, alertbysms));
+            return 0;
         }
     }
 }
