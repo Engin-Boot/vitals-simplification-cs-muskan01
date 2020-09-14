@@ -36,6 +36,9 @@ namespace VitalAssignment
             Vcheck1.VitalList.Add(new Vital("sugar", 70, 99));
             int[] values2 = new int[4] { 40, 91, 92, 100 };
             ExpectFalse(Vcheck1.vitalsAreOk(values2, alertbysms));
+            
+            int[] values3 = new int[4] { 75, 95, 77, 80 };
+            ExpectTrue(Vcheck1.vitalsAreOk(values3, alertbysound));
             return 0;
         }
     }
