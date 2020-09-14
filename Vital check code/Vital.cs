@@ -25,19 +25,14 @@ namespace VitalAssignment
            
             if (vitalValue < lowerLimit)
             {
-                VitalAlert alert;
-                alert = alertType;
                 string message = "is LOW from the required range";
-                alert.Invoke(vitalName, message);
-
+                alertType.Invoke(vitalName, message);
                 return false;
             }
             else if (vitalValue > upperLimit)
             {
-                VitalAlert alert;
-                alert = alertType;
                 string message = "is HIGH from the required range";
-                alert.Invoke(vitalName, message);
+                alertType.Invoke(vitalName, message);
                 return false;
             }
             else
